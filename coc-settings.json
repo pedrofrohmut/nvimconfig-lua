@@ -1,0 +1,6 @@
+{
+  "prettier.disableLanguages": [],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown"],
+  "html.autoClosingTags": false,
+  "html.autoCreateQuotes": false
+}

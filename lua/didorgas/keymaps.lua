@@ -1,91 +1,97 @@
 local options = { noremap = true, silent = true }
-local term_options = { silent = true }
-local keymap = vim.api.nvim_set_keymap
+local map = vim.api.nvim_set_keymap
 
 vim.g.mapleader = " "
 
+-- Help
+map("n", "<F1>", ":vertical help ", {})
+
 -- File Explorer
-keymap("n", "<leader>ff", ":find ", { noremap = true })
-keymap("n", "<leader>fe", ":Ex<CR>", options)
-keymap("n", "<leader>fs", ":Lex 20<cr>", options)
+map("n", "<leader>fe", ":Ex<CR>", options)
 
 -- Closer del
-keymap("i", "<C-l>", "<Del>", options)
+map("i", "<C-l>", "<Del>", options)
 
 -- Insert lines in Normal Mode
-keymap("n", "<CR>", "i<CR><Esc>", options)
-keymap("n", "<C-j>", "o<Esc>k", options)
-keymap("n", "<C-k>", "O<Esc>j", options)
+map("n", "<CR>", "i<CR><Esc>", options)
+map("n", "<leader>j", "o<Esc>k", options)
+map("n", "<leader>k", "O<Esc>j", options)
 
 -- Scrolling (Needed on Windows/WSL)
-keymap("n", "<A-j>", "<C-e>", options)
-keymap("n", "<A-k>", "<C-y>", options)
+map("n", "<A-j>", "<C-e>", options)
+map("n", "<A-k>", "<C-y>", options)
 
 -- Move Text
-keymap("v", "<C-j>", ":move '>+1<CR>gv-gv", options)
-keymap("v", "<C-k>", ":move '<-2<CR>gv-gv", options)
+map("v", "<C-j>", ":move '>+1<CR>gv-gv", options)
+map("v", "<C-k>", ":move '<-2<CR>gv-gv", options)
 
 -- Easy Register Copy/Cut to x
-keymap("v", "<A-y>", "\"xy", options)
-keymap("v", "<A-d>", "\"xd", options)
-keymap("n", "<A-p>", "\"xp", options)
+map("v", "<A-y>", "\"xy", options)
+map("v", "<A-d>", "\"xd", options)
+map("n", "<A-p>", "\"xp", options)
 
--- Function Utils
-keymap("n", "<F4>", ":bufdo bd", { noremap = true }) -- Buffer Delete to all buffers / Reset
-keymap("n", "<F11>", ":%s/\\s\\+$//g<CR>", { noremap = true }) -- Remove trailing spaces
-keymap("n", "<F12>", ":source ~/.config/nvim/init.lua<CR>", { noremap = true }) -- Resource config
+-- ### String Utils ###########################################################
 
--- Closing character on Enter
-keymap("i", "(<CR>", "(<CR>)<Esc>ko", options)
-keymap("i", "[<CR>", "[<CR>]<Esc>ko", options)
-keymap("i", "{<CR>", "{<CR>}<Esc>ko", options)
-keymap("i", "({<CR>", "({<CR>})<Esc>ko", options)
-keymap("i", "`<CR>",  "<CR>`<Esc>ko<Tab>", options)
-keymap("i", "(`<CR>", "(``)<Esc>hi<CR><Esc>ko<Tab>", options)
+-- Remove trailing spaces
+map("n", "<leader>s1", "<cmd>lua require('didorgas.stringFunctions').removeTrailing()<Enter>", options)
+
+-- Indent 2 to 4 spaces
+map("n", "<leader>s2", "<cmd>lua require('didorgas.stringFunctions').indent2to4()<Enter>", options)
+
+-- ### Plugin: Closing cheracter ###############################################
+map("i", "(<CR>", "(<CR>)<Esc>ko", options)
+map("i", "[<CR>", "[<CR>]<Esc>ko", options)
+map("i", "[[<CR>", "[[<CR>]]<Esc>ko", options)
+map("i", "{<CR>", "{<CR>}<Esc>ko", options)
+map("i", "({<CR>", "({<CR>})<Esc>ko", options)
+map("i", "`<CR>",  "<CR>`<Esc>ko<Tab>", options)
+map("i", "(`<CR>", "(``)<Esc>hi<CR><Esc>ko<Tab>", options)
 
 -- ### Buffers #################################################################
 
 -- Next
-keymap("n", "<leader>bn", ":bnext<CR>", options)
-keymap("n", "<leader>bl", ":bnext<CR>", options)
-keymap("n", "<C-n>",      ":bnext<CR>", options)
+map("n", "<leader>bn", ":bnext<CR>", options)
+map("n", "<leader>bl", ":bnext<CR>", options)
 
 -- Previous
-keymap("n", "<leader>bp", ":bprevious<CR>", options)
-keymap("n", "<leader>bh", ":bprevious<CR>", options)
-keymap("n", "<C-p>",      ":bprevious<CR>", options)
+map("n", "<leader>bp", ":bprevious<CR>", options)
+map("n", "<leader>bh", ":bprevious<CR>", options)
 
 -- Utils
-keymap("n", "<leader>bb", ":buffers<CR>", options)
-keymap("n", "<leader>bx", ":buffers<CR>:b", { noremap = true })
-keymap("n", "<leader>bd", ":bdelete<CR>", options)
-keymap("n", "<leader>ba", ":bufdo bd", { noremap = true })
+map("n", "<leader>bb", ":buffers<CR>", options)
+map("n", "<leader>bx", ":buffers<CR>:b", { noremap = true })
+map("n", "<leader>bd", ":bdelete<CR>", options)
+map("n", "<leader>ba", ":bufdo bd", { noremap = true })
 
 -- ### Tabs ####################################################################
 
 -- New Tab
-keymap("n", "<leader>tc", ":tabnew<CR>", options)
+map("n", "<leader>tc", ":tabnew<CR>", options)
 
 -- Close Tabs
-keymap("n", "<leader>tq", ":tabclose<CR>", options)
-keymap("n", "<leader>to", ":tabonly<CR>", options)
+map("n", "<leader>tq", ":tabclose<CR>", options)
+map("n", "<leader>to", ":tabonly<CR>", options)
 
 -- Move Tabs - Left/Right
-keymap("n", "<leader>th", ":-tabmove<CR>", options)
-keymap("n", "<leader>tl", ":+tabmove<CR>", options)
+map("n", "<leader>th", ":-tabmove<CR>", options)
+map("n", "<leader>tl", ":+tabmove<CR>", options)
 
 -- Go To - Next/Prev
-keymap("n", "<leader>tn", ":tabnext<CR>", options)
-keymap("n", "<C-L>", ":tabnext<CR>", options)
-keymap("n", "<leader>tp", ":tabprevious<CR>", options)
-keymap("n", "<C-H>", ":tabprevious<CR>", options)
+map("n", "<leader>tn", ":tabnext<CR>", options)
+map("n", "<C-l>", ":tabnext<CR>", options)
+map("n", "<leader>tp", ":tabprevious<CR>", options)
+map("n", "<C-h>", ":tabprevious<CR>", options)
 
 -- ### Windows #################################################################
 
 -- Resize Horizontal
-keymap("n", "<Up>", ":resize +5<CR>", options)
-keymap("n", "<Down>", ":resize -5<CR>", options)
+map("n", "<Up>", ":resize +5<CR>", options)
+map("n", "<Down>", ":resize -5<CR>", options)
 
 -- Resize Vertical
-keymap("n", "<Left>", ":vertical resize -5<CR>", options)
-keymap("n", "<Right>", ":vertical resize +5<CR>", options)
+map("n", "<Left>", ":vertical resize -5<CR>", options)
+map("n", "<Right>", ":vertical resize +5<CR>", options)
+
+-- Change/Rotate Focus
+map("n", "<C-j>", "<C-w>w", options) -- Next
+map("n", "<C-k>", "<C-w>W", options) -- Prev

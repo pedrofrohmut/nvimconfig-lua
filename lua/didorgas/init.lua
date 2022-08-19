@@ -1,2 +1,16 @@
 require("didorgas.options")
 require("didorgas.keymaps")
+require("didorgas.colors")
+require("didorgas.packer")
+require("didorgas.runner")
+require("didorgas.stringFunctions")
+
+-- Plugins
+require("didorgas.plugins.coc")
+require("didorgas.plugins.emmet")
+require("didorgas.plugins.lualine")
+require("didorgas.plugins.nerdtree")
+require("didorgas.plugins.sneak")
+require("didorgas.plugins.surround")
+require("didorgas.plugins.tagbar")
+require("didorgas.plugins.telescope")
