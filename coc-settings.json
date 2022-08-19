@@ -1,6 +1,13 @@
 {
-  "prettier.disableLanguages": [],
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown"],
-  "html.autoClosingTags": false,
-  "html.autoCreateQuotes": false
+    "languageserver": {
+        "csharp-ls": {
+            "command": "bash && csharp-ls",
+            "filetypes": ["cs"],
+            "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+        }
+    },
+    "prettier.disableLanguages": [],
+    "coc.preferences.formatOnSaveFiletypes": ["css", "markdown"],
+    "html.autoClosingTags": false,
+    "html.autoCreateQuotes": false
 }

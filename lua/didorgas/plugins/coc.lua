@@ -92,6 +92,8 @@ vim.keymap.set("n", "<space>ld", ":<C-u>CocList diagnostics<Enter>", { noremap =
 -- Hide Popups
 vim.keymap.set("n", "<space>h", "<Plug>(coc-float-hide)", {})
 
+-- COCList <args>
+vim.keymap.set("n", "<space>ll", ":<C-u>CocList ", { noremap = true, nowait = true })
 -- Show commands.
 vim.keymap.set("n", "<space>lc", ":<C-u>CocList commands<Enter>", { noremap = true, silent = true, nowait = true })
 -- Find symbol of current document.
