@@ -11,6 +11,7 @@ vim.cmd [[
             autocmd FileType cpp        nnoremap <buffer> <leader>rf :w<CR>:!g++ -o %< % && ./%< <CR>
             autocmd FileType python     nnoremap <buffer> <leader>rf :w<CR>:!python % <CR>
             autocmd FileType javascript nnoremap <buffer> <leader>rf :w<CR>:!node % <CR>
+            autocmd FileType sh         nnoremap <buffer> <leader>rf :w<CR>:!./%<CR>
         endif
     augroup END
 ]]

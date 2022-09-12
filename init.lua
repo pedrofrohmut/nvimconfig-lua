@@ -1,1 +1,12 @@
-require("didorgas")
+require("setup.options")
+require("setup.keymaps")
+require("setup.colors")
+require("setup.autocmds")
+
+require("setup.plugins.emmet")
+require("setup.plugins.lualine")
+require("setup.plugins.nerdtree")
+require("setup.plugins.packer")
+require("setup.plugins.sneak")
+require("setup.plugins.surround")
+require("setup.plugins.telescope")
