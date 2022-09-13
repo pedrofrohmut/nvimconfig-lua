@@ -12,4 +12,3 @@ autocmd({ "VimEnter", "WinEnter", "BufWinEnter" }, {
 autocmd("WinLeave", {
     group = "CursorLine", pattern = "*", command = "setlocal nocursorline" })
 -- CursorLine End
-

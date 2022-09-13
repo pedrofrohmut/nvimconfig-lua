@@ -1,12 +1,14 @@
-require("setup.options")
-require("setup.keymaps")
-require("setup.colors")
-require("setup.autocmds")
+require "setup.autocmds"
+require "setup.colors"
+require "setup.keymaps"
+require "setup.lsp"
+require "setup.options"
 
-require("setup.plugins.emmet")
-require("setup.plugins.lualine")
-require("setup.plugins.nerdtree")
-require("setup.plugins.packer")
-require("setup.plugins.sneak")
-require("setup.plugins.surround")
-require("setup.plugins.telescope")
+require "setup.plugins.coq"
+require "setup.plugins.emmet"
+require "setup.plugins.lualine"
+require "setup.plugins.nerdtree"
+require "setup.plugins.packer"
+require "setup.plugins.sneak"
+require "setup.plugins.surround"
+require "setup.plugins.telescope"
