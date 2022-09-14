@@ -64,10 +64,12 @@ lsp["elixirls"].setup(coq.lsp_ensure_capabilities({
     on_attach = on_attach,
 }))
 
--- lsp["clangd"].setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
--- }
+local path_to_clangd = vim.fn.expand("~/software/clangd_14.0.3/bin/clangd")
+lsp["clangd"].setup {
+    cmd = { path_to_clangd },
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
 
 -- lsp["sumneko_lua"].setup {
 --     capabilities = capabilities,
