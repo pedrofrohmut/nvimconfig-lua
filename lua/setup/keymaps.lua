@@ -92,10 +92,10 @@ map("n", "<leader>th", ":-tabmove<CR>", { silent = true })
 map("n", "<leader>tl", ":+tabmove<CR>", { silent = true })
 
 -- Go To - Next/Prev
-map("n", "<leader>tn", ":tabnext<CR>", { silent = true })
-map("n", "<C-l>", ":tabnext<CR>", { silent = true })
+map("n", "<leader>tn", ":tabnext<CR>",     { silent = true })
+map("n", "<C-l>",      ":tabnext<CR>",     { silent = true })
 map("n", "<leader>tp", ":tabprevious<CR>", { silent = true })
-map("n", "<C-h>", ":tabprevious<CR>", { silent = true })
+map("n", "<C-h>",      ":tabprevious<CR>", { silent = true })
 
 -- ### Jumping/Scrolling #######################################################
 

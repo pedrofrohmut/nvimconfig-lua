@@ -3,6 +3,7 @@ require "setup.colors"
 require "setup.keymaps"
 require "setup.lsp"
 require "setup.options"
+require "setup.treesitter"
 
 require "setup.plugins.coq"
 require "setup.plugins.emmet"

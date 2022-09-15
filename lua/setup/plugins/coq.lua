@@ -4,7 +4,7 @@ vim.g.coq_settings = {
         recommended = true,
         manual_complete_insertion_only = true,
         pre_select = true,
-        jump_to_mark = "",
+        jump_to_mark = "<A-Tab>",
         bigger_preview = "<C-s>"
     }
 }
