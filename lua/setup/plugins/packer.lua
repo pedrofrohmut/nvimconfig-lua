@@ -34,9 +34,6 @@ return require("packer").startup(function(use)
     use "ms-jpq/coq_nvim"
     use "ms-jpq/coq.artifacts"
 
-    -- Snippets
-    use "rafamadriz/friendly-snippets"
-
     -- LSP Config
     use "neovim/nvim-lspconfig"
 
@@ -87,10 +84,10 @@ return require("packer").startup(function(use)
     use "nvim-lualine/lualine.nvim"
 
     -- Color Schemes
-    use "mhartington/oceanic-next"
-    use "jacoborus/tender.vim"
-    use "folke/tokyonight.nvim"
     use "sainnhe/sonokai"
+    -- use "mhartington/oceanic-next"
+    -- use "jacoborus/tender.vim"
+    -- use "folke/tokyonight.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

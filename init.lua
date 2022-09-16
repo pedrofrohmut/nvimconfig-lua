@@ -13,3 +13,5 @@ require "setup.plugins.packer"
 require "setup.plugins.sneak"
 require "setup.plugins.surround"
 require "setup.plugins.telescope"
+
+require "utils.runners"

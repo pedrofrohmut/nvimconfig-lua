@@ -99,12 +99,12 @@ map("n", "<C-h>",      ":tabprevious<CR>", { silent = true })
 
 -- ### Jumping/Scrolling #######################################################
 
--- Scrolling by
-map("n", "s", "6<C-y>")
-map("n", "x", "6<C-e>")
+-- Scrolling
+map("n", "<A-k>", "12<C-y>")
+map("n", "<A-j>", "12<C-e>")
 
-map("n", "<C-d>", "25<C-e>M")
-map("n", "<C-u>", "25<C-y>M")
+map("n", "<C-d>", "28<C-e>M")
+map("n", "<C-u>", "28<C-y>M")
 
 -- Center the screen on file navigation
 map("n", "<C-i>", "<C-i>zz")
