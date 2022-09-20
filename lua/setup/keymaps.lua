@@ -30,8 +30,8 @@ map("i", "<C-l>", "<Del>")
 
 -- Insert lines/spaces in Normal Mode
 map("n", "<CR>", "i<CR><Esc>")
-map("n", "<C-j>", "o<Esc>k")
-map("n", "<C-k>", "O<Esc>j")
+map("n", "<A-j>", "o<Esc>k")
+map("n", "<A-k>", "O<Esc>j")
 
 -- Move Text
 map("v", "<C-j>", ":move '>+1<CR>gv-gv", { silent = true })
@@ -100,8 +100,8 @@ map("n", "<C-h>",      ":tabprevious<CR>", { silent = true })
 -- ### Jumping/Scrolling #######################################################
 
 -- Scrolling
-map("n", "<A-k>", "12<C-y>")
-map("n", "<A-j>", "12<C-e>")
+map("n", "<C-k>", "12<C-y>")
+map("n", "<C-j>", "12<C-e>")
 
 map("n", "<C-d>", "28<C-e>M")
 map("n", "<C-u>", "28<C-y>M")
