@@ -24,7 +24,6 @@ local options = {
     wildmenu       = true,
 
     -- Behavior
-    autoread      = true,
     splitright    = true,
     splitbelow    = true,
     sidescrolloff = 8,

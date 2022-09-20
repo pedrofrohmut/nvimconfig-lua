@@ -22,6 +22,7 @@ vim.diagnostic.config({
     severity_sort = false,
 })
 
+---@diagnostic disable-next-line: unused-local
 local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -50,35 +51,39 @@ vim.g.coq_settings = { auto_start = "shut-up" }
 local lsp = require "lspconfig"
 local coq = require "coq"
 
-local path_to_csharp_ls = vim.fn.expand("~/.dotnet/tools/csharp-ls")
-lsp["csharp_ls"].setup(coq.lsp_ensure_capabilities({
-    cmd = { path_to_csharp_ls },
-    capabilities = capabilities,
+-- local path_to_csharp_ls = vim.fn.expand("~/.dotnet/tools/csharp-ls")
+-- lsp["csharp_ls"].setup(coq.lsp_ensure_capabilities({
+--     cmd = { path_to_csharp_ls },
+--     on_attach = on_attach,
+-- }))
+
+local omnisharp_path = vim.fn.expand("~/software/omnisharp/OmniSharp")
+lsp["omnisharp"].setup(coq.lsp_ensure_capabilities({
+    cmd = { omnisharp_path },
     on_attach = on_attach,
 }))
 
-local path_to_elixirls = vim.fn.expand("~/software/elixir-ls/language_server.sh")
+local elixir_ls_path = vim.fn.expand("~/software/elixir-ls/language_server.sh")
 lsp["elixirls"].setup(coq.lsp_ensure_capabilities({
-    cmd = { path_to_elixirls },
-    capabilities = capabilities,
+    cmd = { elixir_ls_path },
     on_attach = on_attach,
 }))
 
-local path_to_clangd = vim.fn.expand("~/software/clangd_14.0.3/bin/clangd")
+local clangd_path = vim.fn.expand("~/software/clangd_14.0.3/bin/clangd")
 lsp["clangd"].setup {
-    cmd = { path_to_clangd },
-    capabilities = capabilities,
+    cmd = { clangd_path },
     on_attach = on_attach,
 }
 
--- lsp["sumneko_lua"].setup {
---     capabilities = capabilities,
---     on_attach = on_attach,
---     settings = {
---         Lua = {
---             diagnostics = {
---                 globals = { "vim", "use" }
---             }
---         }
---     }
--- }
+local sumneko_path = vim.fn.expand("~/software/lua-language-server/bin/lua-language-server")
+lsp["sumneko_lua"].setup {
+    cmd = { sumneko_path },
+    on_attach = on_attach,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim", "use" }
+            }
+        }
+    }
+}
