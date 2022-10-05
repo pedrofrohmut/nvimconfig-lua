@@ -30,9 +30,8 @@ local on_attach = function(client, bufnr)
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = { silent = true, buffer = bufnr }
-    map("n", "gy", vim.lsp.buf.declaration, bufopts)
     map("n", "gd", vim.lsp.buf.definition, bufopts)
-    map("n", "gi", vim.lsp.buf.implementation, bufopts)
+    map("n", "gh", vim.lsp.buf.implementation, bufopts)
     map("n", "gt", vim.lsp.buf.type_definition, bufopts)
     map("n", "gr", vim.lsp.buf.references, bufopts)
 
