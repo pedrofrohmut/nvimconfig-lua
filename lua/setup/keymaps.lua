@@ -22,6 +22,8 @@ map("n", "<leader>fp", ":find ")
 map("n", "<leader>nf", ":!touch ")
 map("n", "<leader>nd", ":!mkdir -p ")
 
+map("n", "U", "<C-r>")
+
 -- Reset command-line
 map("n", "<C-c>", "<cmd>set cmdheight=1<Enter><cmd>echo ''<Enter>");
 
