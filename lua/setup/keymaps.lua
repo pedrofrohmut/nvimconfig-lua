@@ -10,6 +10,9 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
+-- Space do nothing
+map({"n", "v"}, "<Space>", "<Nop>", { silent = true })
+
 -- Function Keys
 map("n", "<F1>", ":vertical help ")
 map("n", "<F2>", ":verbose map ")
