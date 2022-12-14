@@ -4,6 +4,9 @@ local augroup = vim.api.nvim_create_augroup
 -- Remove auto insert comments next line
 autocmd("FileType", { pattern = "*", command = "setlocal formatoptions-=cro" })
 
+-- Set 4 indent to all files
+autocmd("FileType", { pattern = "*", command = "setlocal shiftwidth=4" })
+
 -- Only show the cursor line in the active buffer.
 augroup("CursorLine", { clear = true })
 -- CursorLine Begin
