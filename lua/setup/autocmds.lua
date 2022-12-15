@@ -1,5 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
+local f = require("utils.string-functions")
 
 -- Remove auto insert comments next line
 autocmd("FileType", { pattern = "*", command = "setlocal formatoptions-=cro" })
@@ -15,3 +16,6 @@ autocmd({ "VimEnter", "WinEnter", "BufWinEnter" }, {
 autocmd("WinLeave", {
     group = "CursorLine", pattern = "*", command = "setlocal nocursorline" })
 -- CursorLine End
+
+-- Remove Trailing White Spaces onSave
+autocmd("BufWrite", { pattern="*", command=" execute '%s/\\s\\+$' " })

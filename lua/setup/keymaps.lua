@@ -25,6 +25,7 @@ map("n", "<leader>fp", ":find ")
 map("n", "<leader>nf", ":!touch ")
 map("n", "<leader>nd", ":!mkdir -p ")
 
+-- Redo on better mapping
 map("n", "U", "<C-r>")
 
 -- Reset command-line
