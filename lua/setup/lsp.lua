@@ -50,30 +50,28 @@ vim.g.coq_settings = { auto_start = "shut-up" }
 local lsp = require "lspconfig"
 local coq = require "coq"
 
--- local path_to_csharp_ls = vim.fn.expand("~/.dotnet/tools/csharp-ls")
--- lsp["csharp_ls"].setup(coq.lsp_ensure_capabilities({
---     cmd = { path_to_csharp_ls },
---     on_attach = on_attach,
--- }))
-
+-- CSharp
 local omnisharp_path = vim.fn.expand("~/software/omnisharp/OmniSharp")
 lsp["omnisharp"].setup(coq.lsp_ensure_capabilities({
     cmd = { omnisharp_path },
-    on_attach = on_attach,
+    on_attach = on_attach
 }))
 
+-- Elixir
 local elixir_ls_path = vim.fn.expand("~/software/elixir-ls/language_server.sh")
 lsp["elixirls"].setup(coq.lsp_ensure_capabilities({
     cmd = { elixir_ls_path },
-    on_attach = on_attach,
+    on_attach = on_attach
 }))
 
+-- C/C++
 local clangd_path = vim.fn.expand("~/software/clangd_14.0.3/bin/clangd")
 lsp["clangd"].setup {
     cmd = { clangd_path },
-    on_attach = on_attach,
+    on_attach = on_attach
 }
 
+-- Lua
 local sumneko_path = vim.fn.expand("~/software/lua-language-server/bin/lua-language-server")
 lsp["sumneko_lua"].setup {
     cmd = { sumneko_path },
@@ -86,3 +84,13 @@ lsp["sumneko_lua"].setup {
         }
     }
 }
+
+-- Rust
+local rust_analyzer_path = vim.fn.expand("~/software/rust/rust-analyzer")
+lsp["rust_analyzer"].setup(coq.lsp_ensure_capabilities({
+    cmd = { rust_analyzer_path },
+    on_attach = on_attach,
+    settings = {
+        ["rust-analyzer"] = {}
+    }
+}))

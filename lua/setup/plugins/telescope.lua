@@ -6,7 +6,9 @@ end
 
 require("telescope").setup({
     defaults = {
-        file_ignore_patterns = { "bin/", "obj/", "%.o", "%.out", "node_modules/", ".git/" },
+        file_ignore_patterns = {
+            "bin/", "obj/", "%.o", "%.out", "node_modules/", ".git/", "target/"
+        },
         mappings = {
             i = {
                 ["<C-j>"] = actions.move_selection_next,

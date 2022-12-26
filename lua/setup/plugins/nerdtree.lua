@@ -1,13 +1,13 @@
-vim.g.NERDTreeIgnore = { 
-    'node_modules', 
-    'deps', 
-    'obj', 
-    'bin', 
-    'target', 
-    '__pycache__', 
-    '.git', 
-    '.dist', 
-    '.next', 
+vim.g.NERDTreeIgnore = {
+    'node_modules',
+    'deps',
+    'obj',
+    'bin',
+    'target',
+    '__pycache__',
+    '.git',
+    '.dist',
+    '.next',
     'dist',
 }
 
