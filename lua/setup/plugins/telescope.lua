@@ -7,7 +7,8 @@ end
 require("telescope").setup({
     defaults = {
         file_ignore_patterns = {
-            "bin/", "obj/", "%.o", "%.out", "node_modules/", ".git/", "target/"
+            "bin/", "obj/", "%.o", "%.out", "node_modules/", ".git/", "target/",
+            "_build", ".elixir_ls", "deps",
         },
         mappings = {
             i = {

@@ -1,14 +1,16 @@
 vim.g.NERDTreeIgnore = {
-    'node_modules',
-    'deps',
-    'obj',
-    'bin',
-    'target',
-    '__pycache__',
-    '.git',
-    '.dist',
-    '.next',
-    'dist',
+    "node_modules",
+    "obj",
+    "bin",
+    "target",
+    "__pycache__",
+    ".git",
+    ".dist",
+    ".next",
+    "dist",
+    "deps",
+    "_build",
+    ".elixir_ls",
 }
 
 vim.g.NERDTreeWinSize     = 36

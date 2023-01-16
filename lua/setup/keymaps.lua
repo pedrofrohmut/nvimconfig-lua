@@ -36,8 +36,8 @@ map("i", "<C-l>", "<Del>")
 
 -- Insert lines/spaces in Normal Mode
 map("n", "<CR>", "i<CR><Esc>")
-map("n", "<A-j>", "o<Esc>k")
-map("n", "<A-k>", "O<Esc>j")
+-- map("n", "<A-j>", "o<Esc>k")
+-- map("n", "<A-k>", "O<Esc>j")
 
 -- Move Text
 map("v", "<C-j>", ":move '>+1<CR>gv-gv", { silent = true })
