@@ -11,6 +11,7 @@ vim.g.NERDTreeIgnore = {
     "deps",
     "_build",
     ".elixir_ls",
+    "\\.out$",
 }
 
 vim.g.NERDTreeWinSize     = 36
