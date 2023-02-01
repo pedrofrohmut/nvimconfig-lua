@@ -50,31 +50,42 @@ vim.g.coq_settings = { auto_start = "shut-up" }
 local lsp = require "lspconfig"
 local coq = require "coq"
 
--- CSharp
-local omnisharp_path = vim.fn.expand("~/software/omnisharp/OmniSharp")
-lsp["omnisharp"].setup(coq.lsp_ensure_capabilities({
-    cmd = { omnisharp_path },
-    on_attach = on_attach
+-- C/C++
+lsp.clangd.setup(coq.lsp_ensure_capabilities({
+    cmd = { "clangd" },
+    on_attach = on_attach,
 }))
 
 -- Elixir
-local elixir_ls_path = vim.fn.expand("~/software/elixir-ls/language_server.sh")
-lsp["elixirls"].setup(coq.lsp_ensure_capabilities({
-    cmd = { elixir_ls_path },
-    on_attach = on_attach
+lsp.elixirls.setup(coq.lsp_ensure_capabilities({
+    cmd = { "elixir-ls" },
+    on_attach = on_attach,
 }))
 
--- C/C++
-local clangd_path = vim.fn.expand("~/software/clangd_14.0.3/bin/clangd")
-lsp["clangd"].setup {
-    cmd = { clangd_path },
-    on_attach = on_attach
-}
+-- CSharp
+lsp.omnisharp.setup(coq.lsp_ensure_capabilities({
+    cmd = { "omnisharp" },
+    on_attach = on_attach,
+}))
 
--- Lua
-local sumneko_path = vim.fn.expand("~/software/lua-language-server/bin/lua-language-server")
-lsp["sumneko_lua"].setup {
-    cmd = { sumneko_path },
+-- Python
+lsp.pyright.setup(coq.lsp_ensure_capabilities({
+    cmd = { "pyright-langserver" },
+    on_attach = on_attach,
+}))
+
+-- -- Rust
+lsp.rust_analyzer.setup(coq.lsp_ensure_capabilities({
+    cmd = { "rust-analyzer" },
+    on_attach = on_attach,
+    settings = {
+        ["rust-analyzer"] = {},
+    },
+}))
+
+-- -- Lua
+lsp.sumneko_lua.setup(coq.lsp_ensure_capabilities({
+    cmd = { "lua-language-server" },
     on_attach = on_attach,
     settings = {
         Lua = {
@@ -82,15 +93,11 @@ lsp["sumneko_lua"].setup {
                 globals = { "vim", "use" }
             }
         }
-    }
-}
+    },
+}))
 
--- Rust
-local rust_analyzer_path = vim.fn.expand("~/software/rust/rust-analyzer")
-lsp["rust_analyzer"].setup(coq.lsp_ensure_capabilities({
-    cmd = { rust_analyzer_path },
+-- Typescript/Javascript
+lsp.tsserver.setup(coq.lsp_ensure_capabilities({
+    cmd = { "typescript-language-server" },
     on_attach = on_attach,
-    settings = {
-        ["rust-analyzer"] = {}
-    }
 }))

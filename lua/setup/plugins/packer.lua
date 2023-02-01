@@ -37,11 +37,21 @@ return require("packer").startup(function(use)
     -- LSP Config
     use "neovim/nvim-lspconfig"
 
-    -- Symbols
+    -- Language Servers
+    use { "williamboman/mason.nvim" }
+    use { "williamboman/mason-lspconfig.nvim" }
+
+    -- Language Support
+    use "nvim-treesitter/nvim-treesitter"
+    use "elixir-editors/vim-elixir"
+
+    -- Symbols (Tagbar)
     use "simrat39/symbols-outline.nvim"
 
+    -- Required for Telescope
+    use "nvim-lua/plenary.nvim"
+
     -- Telescope
-    use "nvim-lua/plenary.nvim" -- Required for Telescope
     use {
         "nvim-telescope/telescope.nvim", tag = "0.1.0",
         requires = { { "nvim-lua/plenary.nvim" } }
@@ -51,10 +61,6 @@ return require("packer").startup(function(use)
     -- Tree file explorer
     use "preservim/nerdtree"
     use "nvim-treesitter/nvim-treesitter-textobjects"
-
-    -- Language Support
-    use "nvim-treesitter/nvim-treesitter"
-    use "elixir-editors/vim-elixir"
 
     -- Jump plugin like small version of easy motion
     use "justinmk/vim-sneak"
