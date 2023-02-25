@@ -11,7 +11,8 @@ vim.cmd [[
         autocmd FileType sh         nnoremap <buffer> <leader>rf :w<CR>:! ./% <CR>
         autocmd FileType elixir     nnoremap <buffer> <leader>rf :w<CR>:! elixir % <CR>
        "autocmd FileType rust       nnoremap <buffer> <leader>rf :w<CR>:! rustc -o rust.out % && ./rust.out <CR>
-        autocmd FileType rust       nnoremap <buffer> <leader>rf :w<CR>:! cargo run <CR>
+        autocmd FileType rust       nnoremap <buffer> <leader>rf :w<CR>:! cargo run --quiet <CR>
         autocmd FileType cs         nnoremap <buffer> <leader>rf :w<CR>:! csc /out:csharp.out % && mono csharp.out <CR>
+        autocmd FileType clojure    nnoremap <buffer> <leader>rf :w<CR>:! clojure -M % <CR>
     augroup END
 ]]

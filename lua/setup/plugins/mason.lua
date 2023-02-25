@@ -7,7 +7,7 @@ require("mason-lspconfig").setup({
         "omnisharp",     -- CSharp
         "pyright",       -- Python
         "rust_analyzer", -- Rust
-        "sumneko_lua",   -- Lua
+        "lua_ls",        -- Lua
         "tsserver",      -- Typescript/Javascript
     }
 })

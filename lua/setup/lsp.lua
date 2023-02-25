@@ -84,7 +84,7 @@ lsp.rust_analyzer.setup(coq.lsp_ensure_capabilities({
 }))
 
 -- -- Lua
-lsp.sumneko_lua.setup(coq.lsp_ensure_capabilities({
+lsp.lua_ls.setup(coq.lsp_ensure_capabilities({
     cmd = { "lua-language-server" },
     on_attach = on_attach,
     settings = {
