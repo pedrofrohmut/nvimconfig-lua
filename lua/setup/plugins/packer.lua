@@ -92,7 +92,7 @@ return require("packer").startup(function(use)
     -- Status Line
     use "nvim-lualine/lualine.nvim"
 
-    -- Color Schemes
+    -- Color Schemes (comment it out the one you like be not using)
     use "sainnhe/sonokai"
     -- use "mhartington/oceanic-next"
     -- use "jacoborus/tender.vim"

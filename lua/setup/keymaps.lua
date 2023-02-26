@@ -36,12 +36,12 @@ map("i", "<C-l>", "<Del>")
 
 -- Insert lines/spaces in Normal Mode
 map("n", "<CR>", "i<CR><Esc>")
--- map("n", "<A-j>", "o<Esc>k")
--- map("n", "<A-k>", "O<Esc>j")
+map("n", "<A-j>", "o<Esc>k")
+map("n", "<A-k>", "O<Esc>j")
 
 -- Move Text
-map("v", "<C-j>", ":move '>+1<CR>gv-gv", { silent = true })
-map("v", "<C-k>", ":move '<-2<CR>gv-gv", { silent = true })
+-- map("v", "<C-j>", ":move '>+1<CR>gv-gv", { silent = true })
+-- map("v", "<C-k>", ":move '>-2<CR>gv-gv", { silent = true })
 map("v", ">", ">gv", { silent = true })
 map("v", "<", "<gv", { silent = true })
 
@@ -111,11 +111,6 @@ map("n", "<C-j>", "12<C-e>")
 
 map("n", "<C-d>", "28<C-e>M")
 map("n", "<C-u>", "28<C-y>M")
-
--- Center the screen on file navigation
-map("n", "<C-i>", "<C-i>zz")
-map("n", "<C-o>", "<C-o>zz")
-map("n", "<C-t>", "<C-t>zz")
 
 -- ### Windows #################################################################
 

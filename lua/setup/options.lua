@@ -3,7 +3,6 @@
 ]]
 local options = {
     -- Indentation and tabing
-    --smartindent = true,
     expandtab   = true,
     shiftwidth  = 4,
     softtabstop = 4,
