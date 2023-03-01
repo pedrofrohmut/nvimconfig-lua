@@ -26,6 +26,7 @@ local options = {
     splitright    = true,
     splitbelow    = true,
     sidescrolloff = 8,
+    scrolloff     = 8,
     cursorline    = true,
     mouse         = "a",
     updatetime    = 250,

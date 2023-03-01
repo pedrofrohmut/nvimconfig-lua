@@ -5,6 +5,7 @@ require "setup.lsp"
 require "setup.options"
 require "setup.treesitter"
 
+require "setup.plugins.autopairs"
 require "setup.plugins.coq"
 require "setup.plugins.emmet"
 require "setup.plugins.lualine"

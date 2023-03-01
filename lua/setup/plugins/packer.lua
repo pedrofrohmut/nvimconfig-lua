@@ -71,6 +71,9 @@ return require("packer").startup(function(use)
     -- Auto close HTML tags
     use "alvan/vim-closetag"
 
+    -- Auto Pairs
+    use "windwp/nvim-autopairs"
+
     -- EditorConfig
     use "editorconfig/editorconfig-vim"
 
