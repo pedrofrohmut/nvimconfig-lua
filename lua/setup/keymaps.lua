@@ -60,13 +60,13 @@ map("n", "<A-n>", "<cmd>cnext<Enter>")
 map("n", "<A-p>", "<cmd>cprev<Enter>")
 
 -- ### MyPlugin: Closing cheracter #############################################
--- map("i", "(<CR>", "(<CR>)<Esc>ko")
--- map("i", "[<CR>", "[<CR>]<Esc>ko")
--- map("i", "[[<CR>", "[[<CR>]]<Esc>ko")
--- map("i", "{<CR>", "{<CR>}<Esc>ko")
--- map("i", "({<CR>", "({<CR>})<Esc>ko")
--- map("i", "`<CR>",  "<CR>`<Esc>ko<Tab>")
--- map("i", "(`<CR>", "(``)<Esc>hi<CR><Esc>ko<Tab>")
+map("i", "(<CR>", "(<CR>)<Esc>ko")
+map("i", "[<CR>", "[<CR>]<Esc>ko")
+map("i", "[[<CR>", "[[<CR>]]<Esc>ko")
+map("i", "{<CR>", "{<CR>}<Esc>ko")
+map("i", "({<CR>", "({<CR>})<Esc>ko")
+map("i", "`<CR>",  "<CR>`<Esc>ko<Tab>")
+map("i", "(`<CR>", "(``)<Esc>hi<CR><Esc>ko<Tab>")
 
 -- ### Buffers #################################################################
 
