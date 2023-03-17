@@ -1,3 +1,7 @@
 snippet print_macro
 alias ptl
-    println!("{}", ${1: values});
+    println!("${2: text}{}", ${1: values});
+
+snippet string_from
+alias stf
+    String::from("${1}");
